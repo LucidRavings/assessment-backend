@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(37, 36, 43);
+}
+
+form {
+    display:block;
+}
+
+h3 {
+    color: white;
+}
+
+button {
+    background-color: rgb(72, 172, 72);
+    border-radius: 100px;
+    display:block;
+    padding: 5px;
+    margin: 5px;
+}
+
+#deleteFortuneButton {
+    background-color: rgb(160, 12, 12);
+}

@@ -1,3 +1,4 @@
+const fortunes = ["Struggle awaits you, prepare now.", "Trust yourself, now is the time to take a risk.", "Don't wait to tell someone you love them.", "The answers you seek, lie within yourself.", "Greatness is paved with failure, take the first step."];
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -11,7 +12,7 @@ module.exports = {
     },
 
     getFortune: (req, res) => {
-        const fortunes = ["Struggle awaits you, prepare now.", "Trust yourself, now is the time to take a risk.", "Don't wait to tell someone you love them.", "The answers you seek, lie within yourself.", "Greatness is paved with failure, take the first step."];
+
 
         let randomIndex = Math.floor(Math.random() * fortunes.length);
         let randomFortune = fortunes[randomIndex];
