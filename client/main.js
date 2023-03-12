@@ -17,10 +17,9 @@ postForm.addEventListener("submit", (event) => {
 
     const body = {
         fortune: postFortune.value
-        // id: 
     }
 
-    axios.post("http://localhost:4000/fortunes", body)
+    axios.post("http://localhost:4000/api/fortune", body)
     .then(() => {
         alert('Fortune added!')
     })
@@ -32,13 +31,46 @@ postForm.addEventListener("submit", (event) => {
 
 putForm.addEventListener("submit", (event) => {
     event.preventDefault()
+
+    const body = {
+        fortune: putFortune.value,
+        index: putFortuneId.value
+    }
+
+    axios.put("http://localhost:4000/api/fortune", body)
+    .then(() => {
+        alert("Fortune changed!")
+    }).catch((err) => {
+        console.log(err)
+        alert("Something went wrong!")
+    })
 })
 
 deleteForm.addEventListener("submit", (event) => {
     event.preventDefault()
+
+    const body = {
+        index: deleteFortuneId.value
+    }
+
+    axios.delete("http://localhost:4000/api/fortune", body)
+    .then(() => {
+        alert("Fortune deleted!")
+    }).catch((err) => {
+        console.log(err)
+        alert("Something went wrong!")
+    })
 })
 
-
+getButton.addEventListener("click", () => {
+    axios.get("http://localhost:4000/api/listFortune")
+    .then((res) => {
+        console.log(res.data)
+    }).catch((err) => {
+        console.log(err)
+        alert("Something went wrong!")
+    })
+})
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
